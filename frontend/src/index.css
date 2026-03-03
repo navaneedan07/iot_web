@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --color-brand: 236 72 153;       /* pink-500 */
+  --color-brand-deep: 190 24 93;   /* pink-700 */
+  --color-surface: 255 255 255;
+  --radius-card: 1.25rem;
+}
+
+body {
+  @apply text-slate-900 antialiased;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  background: linear-gradient(170deg, #fff 0%, #fdf2f8 40%, #fce7f3 100%);
+  background-attachment: fixed;
+}
+
+h1, h2, h3 {
+  font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+  letter-spacing: -0.025em;
+}
+
+/* ── Card system ── */
+.card {
+  @apply rounded-2xl border border-slate-200/80 bg-white shadow-sm transition duration-200;
+}
+.card:hover {
+  @apply shadow-md border-slate-300/80;
+}
+.card-flat {
+  @apply rounded-2xl border border-slate-200/80 bg-white;
+}
+
+/* ── Pills / tags ── */
+.pill {
+  @apply inline-flex items-center gap-1.5 rounded-full bg-pink-50 px-2.5 py-0.5 text-[11px] font-semibold tracking-wide text-pink-600 border border-pink-100/70;
+}
+.pill-neutral {
+  @apply inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-semibold tracking-wide text-slate-600;
+}
+
+/* ── Buttons ── */
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200;
+  background: linear-gradient(135deg, rgb(var(--color-brand)), rgb(var(--color-brand-deep)));
+  box-shadow: 0 1px 3px rgba(var(--color-brand), 0.3), 0 4px 12px rgba(var(--color-brand), 0.15);
+}
+.btn-primary:hover {
+  box-shadow: 0 2px 6px rgba(var(--color-brand), 0.35), 0 8px 24px rgba(var(--color-brand), 0.2);
+  transform: translateY(-1px);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-ghost {
+  @apply inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition-all duration-200 hover:border-pink-300 hover:text-pink-700 hover:bg-pink-50/50;
+}
+
+.active-nav {
+  @apply border-pink-300 text-pink-700 bg-pink-50;
+}
+
+/* ── Glass panels ── */
+.glass {
+  @apply bg-slate-50 border border-slate-200 rounded-xl;
+}
+
+/* ── Form controls ── */
+input, textarea, select {
+  @apply outline-none transition rounded-xl border border-slate-200 bg-white text-sm;
+}
+input:focus, textarea:focus, select:focus {
+  @apply ring-2 ring-pink-200 border-pink-400;
+}
+
+/* ── Section label ── */
+.section-label {
+  @apply text-xs font-semibold uppercase tracking-wider text-slate-400;
+}
+
+/* ── Scrollbar ── */
+::selection {
+  background: rgba(236, 72, 153, 0.15);
+  color: #111827;
+}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: #f9a8d4;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover { background: #f472b6; }
+
+/* ── Stat number ── */
+.stat-value {
+  @apply text-2xl font-bold tracking-tight text-slate-900;
+}
+.stat-label {
+  @apply text-xs text-slate-500 font-medium;
+}
+
+/* ── Smooth page transitions ── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-in {
+  animation: fadeIn 0.3s ease-out both;
+}

@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Environment variables (sensitive)
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Build output
+frontend/dist/
+
+# Uploaded user media
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Package lock (optional — keep if you want deterministic installs)
+# package-lock.json
